@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+﻿2<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewData["Title"] - Demo_Project</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -16,14 +16,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand">My First Demo_Project</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
+                <div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Sign in", "Login", "Home")</li>
+                        <li>@Html.ActionLink("Sign Up", "UserRegistration", "Home")</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
