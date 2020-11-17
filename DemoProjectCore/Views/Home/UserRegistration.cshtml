@@ -4,14 +4,14 @@
     ViewData["Title"] = "UserRegistration";
 }
 
-<h2>UserRegistration</h2>
+<h2>NewUserRegistration</h2>
+<hr/>
 
 @using (Html.BeginForm("UserRegistration", "Home",FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.User_Name, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -47,16 +47,26 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-3 input-group">
+                <div class="input-group">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    <span class="input-group-addon">
+                        <img id="btnShow" src="~/Image/_123029.png"/>
+                    </span>
+                </div>
                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Confirm_Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Confirm_Password, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-3 input-group">
+                <div class="input-group">
+                    @Html.EditorFor(model => model.Confirm_Password, new { htmlAttributes = new { @class = "form-control" } })
+                    <span class="input-group-addon">
+                        <img id="btnHide" src="~/Image/_123029.png" />
+                    </span>
+                </div>
                 @Html.ValidationMessageFor(model => model.Confirm_Password, "", new { @class = "text-danger" })
             </div>
         </div>
